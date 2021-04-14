@@ -1,0 +1,45 @@
+body {
+  display: flex;
+}
+.play-again {
+  display: none;
+}
+
+.title {
+  display: block;
+  margin: 0 auto;
+}
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 550px;
+  height: auto;
+
+  background-color: rgb(26, 24, 156);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  column-gap: 5px;
+  row-gap: 5px;
+  grid-template-areas:
+    "one two three"
+    "four five six"
+    "sev eight nine";
+}
+
+.buttons > button {
+  font-size: 60px;
+  padding: 10px;
+  grid-area: "one";
+  border: 1px solid white;
+  background-color: white;
+  color: white;
+}
+
+.buttons > button:disabled {
+  color: rgb(231, 14, 14);
+  background-color: white;
+}
