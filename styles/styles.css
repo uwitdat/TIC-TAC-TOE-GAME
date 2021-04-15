@@ -39,6 +39,10 @@ body {
   color: white;
 }
 
+.buttons > button:hover {
+  background-color: rgb(230, 225, 225);
+  color: rgb(230, 225, 225);
+}
 .buttons > button:disabled {
   color: rgb(231, 14, 14);
   background-color: white;

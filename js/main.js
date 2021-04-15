@@ -15,33 +15,39 @@ let x = 'X'
 let o = 'O'
 
 let scoreX = document.querySelector('.x')
-scoreX.innerHTML = `Xs: ${gameScore.x}|`
+scoreX.innerHTML = `Xs: ${gameScore.x}`
 let scoreO = document.querySelector('.o')
-scoreO.innerHTML = `Os: ${gameScore.o}|`
+scoreO.innerHTML = `Os: ${gameScore.o}`
 let scoreTies = document.querySelector('.ties')
-scoreTies.innerHTML = `Ties: ${gameScore.ties}|`
+scoreTies.innerHTML = `Ties: ${gameScore.ties}`
 
 playAgain.addEventListener('click', function (e){
     reset()
 })
 
+
 //DOMS
 btnsDiv.addEventListener('click',function (e){
+    if(e.target.tagName !== 'BUTTON') return;
         if(gameState % 2 === 0){   
         e.target.innerText = x
         e.target.disabled = true
         e.target.style.color = 'blue'
         gameState++
+        console.log(gameState)
         gameText.textContent = 'Os TURN.'
         winner();
+        ties();
 
         }else{
         e.target.innerText= o
         e.target.disabled = true
         e.target.style.color = 'red'
         gameState++
+        console.log(gameState)
         gameText.textContent = 'Xs TURN.'
-        winner();                
+        winner();     
+        ties();     
         }
     }
 )
@@ -194,7 +200,6 @@ function winner(){
     }   
 }
 
-
 function disableButtons(){
     for(let btn of btnsDiv.children){
         btn.disabled = true
@@ -208,7 +213,23 @@ function reset(){
     for(let btn of btnsDiv.children){
         btn.removeAttribute('disabled');
         btn.style.color = 'white';
-        btn.innerText = '1'
+        btn.innerText = 'null'
         gameText.innerHTML = 'Play Again!'
+        gameState = 0
+        console.log(gameState)
     }
 }
+
+function ties(){
+    for(let btn of btnsDiv.children){
+        if(btn.innerHTML != null && gameState === 9){
+            scoreTies.innerHTML = `Ties: ${gameScore.ties}`;
+            gameText.innerHTML = 'ITS A TIE!'
+            gameScore.ties ++
+            disableButtons();
+            playAgain.style.display = 'block';
+        }
+    }
+}
+
+
