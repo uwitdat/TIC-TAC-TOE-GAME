@@ -51,88 +51,32 @@ btnsDiv.addEventListener('click',function (e){
     }
 )
 
+outcomeLines = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 8],
+    [2, 4, 6],
+]
+
 function winner(){
-    if(btnsDiv.children[0].innerText === x && btnsDiv.children[1].innerText === x && btnsDiv.children[2].innerText === x){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[1].style.color = 'green';
-        btnsDiv.children[2].style.color = 'green';
+for (line of outcomeLines) {
+    let [a, b, c] = line;
+    if(btnsDiv.children[a].innerText === x && btnsDiv.children[b].innerText === x && btnsDiv.children [c].innerText === x){
+        btnsDiv.children[a].style.color = 'green';
+        btnsDiv.children[b].style.color = 'green';
+        btnsDiv.children[c].style.color = 'green';
         xWin();
-    }   if(btnsDiv.children[0].innerText === o && btnsDiv.children[1].innerText === o && btnsDiv.children[2].innerText === o){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[1].style.color = 'green';
-        btnsDiv.children[2].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[3].innerText === x && btnsDiv.children[4].innerText === x && btnsDiv.children[5].innerText === x){
-        btnsDiv.children[3].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[5].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[3].innerText === o && btnsDiv.children[4].innerText === o && btnsDiv.children[5].innerText === o){
-        btnsDiv.children[3].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[5].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[6].innerText === x && btnsDiv.children[7].innerText === x && btnsDiv.children[8].innerText === x){
-        btnsDiv.children[6].style.color = 'green';
-        btnsDiv.children[7].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[6].innerText === o && btnsDiv.children[7].innerText === o && btnsDiv.children[8].innerText === o){
-        btnsDiv.children[6].style.color = 'green';
-        btnsDiv.children[7].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[0].innerText === x && btnsDiv.children[3].innerText === x && btnsDiv.children[6].innerText === x){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[3].style.color = 'green';
-        btnsDiv.children[6].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[0].innerText === o && btnsDiv.children[3].innerText === o && btnsDiv.children[6].innerText === o){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[3].style.color = 'green';
-        btnsDiv.children[6].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[1].innerText === x && btnsDiv.children[4].innerText === x && btnsDiv.children[7].innerText === x){
-        btnsDiv.children[1].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[7].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[1].innerText === o && btnsDiv.children[4].innerText === o && btnsDiv.children[7].innerText === o){
-        btnsDiv.children[1].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[7].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[2].innerText === x && btnsDiv.children[5].innerText === x && btnsDiv.children[8].innerText === x){
-        btnsDiv.children[2].style.color = 'green';
-        btnsDiv.children[5].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[2].innerText === o && btnsDiv.children[5].innerText === o && btnsDiv.children[8].innerText === o){
-        btnsDiv.children[2].style.color = 'green';
-        btnsDiv.children[5].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[0].innerText === x && btnsDiv.children[4].innerText === x && btnsDiv.children[8].innerText === x){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[0].innerText === o && btnsDiv.children[4].innerText === o && btnsDiv.children[8].innerText === o){
-        btnsDiv.children[0].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[8].style.color = 'green';
-        oWin();
-    }   if(btnsDiv.children[2].innerText === x && btnsDiv.children[4].innerText === x && btnsDiv.children[6].innerText === x){
-        btnsDiv.children[2].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[6].style.color = 'green';
-        xWin();
-    }   if(btnsDiv.children[2].innerText === o && btnsDiv.children[4].innerText === o && btnsDiv.children[6].innerText === o){
-        btnsDiv.children[2].style.color = 'green';
-        btnsDiv.children[4].style.color = 'green';
-        btnsDiv.children[6].style.color = 'green';
-        oWin();
-    }   
+    }if(btnsDiv.children[a].innerText === o && btnsDiv.children[b].innerText === o && btnsDiv.children [c].innerText === o){
+        btnsDiv.children[a].style.color = 'green';
+        btnsDiv.children[b].style.color = 'green';
+        btnsDiv.children[c].style.color = 'green';
+        oWin();   
+        } 
+    }
 }
 
 function disableButtons(){
@@ -151,19 +95,16 @@ function reset(){
         btn.innerText = 'null'
         gameText.innerHTML = 'Play Again!'
         gameState = 0
-        console.log(gameState)
     }
 }
 
 function ties(){
-    for(let btn of btnsDiv.children){
-        if(btn.innerHTML != null && gameState === 9){               
-            scoreTies.innerHTML = `Ties: ${gameScore.ties}`;
-            gameText.innerHTML = 'ITS A TIE!'
-            disableButtons();
-            playAgain.style.display = 'block';
-            gameScore.ties ++
-        }
+    if(gameText.innerHTML.includes("TURN") && gameState === 9){               
+        gameScore.ties ++
+        scoreTies.innerHTML = `Ties: ${gameScore.ties}`;
+        gameText.innerHTML = 'ITS A TIE!'
+        disableButtons();
+        playAgain.style.display = 'block';
     }
 }
 
