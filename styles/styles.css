@@ -1,12 +1,13 @@
 body {
   display: flex;
+  font-family: "Paytone One", sans-serif;
 }
 .play-again {
   display: none;
 }
 
 .title {
-  display: block;
+  display: inline-block;
   margin: 0 auto;
 }
 .container {
@@ -14,8 +15,7 @@ body {
   margin: 0 auto;
   width: 550px;
   height: auto;
-
-  background-color: rgb(26, 24, 156);
+  background-color: rgb(0, 0, 0);
 }
 
 .buttons {
@@ -37,13 +37,50 @@ body {
   border: 1px solid white;
   background-color: white;
   color: white;
+  font-family: "Carter One", cursive;
 }
 
-/* .buttons > button:hover {
-  background-color: rgb(230, 225, 225);
-  color: rgb(230, 225, 225);
-} */
+/* .buttons > button:hover { */
+
+/* background-color: rgb(230, 225, 225);
+  color: rgb(230, 225, 225); */
+/* } */
+
 .buttons > button:disabled {
   color: rgb(231, 14, 14);
   background-color: white;
+}
+
+.play-again {
+  display: none;
+  font-size: larger;
+  color: azure;
+  padding: 27px;
+  font-family: "Paytone One", sans-serif;
+  background-color: rgb(0, 0, 0);
+  border-radius: 60%;
+  border: solid 1px black;
+}
+
+.play-again:hover {
+  background-color: rgb(30, 112, 78);
+  border: solid 1px rgb(30, 112, 78);
+  transform: scale(1.1);
+}
+
+.game-text {
+  display: block;
+}
+
+.render {
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px rgb(53, 199, 138);
+}
+
+h3 {
+  font-size: 24px;
 }

@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&family=Paytone+One&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <script defer src='./js/main.js'></script>
     <title>Tic Tac Toe Game</title>
 </head>
 <body>
     <div class='title'>
-        <h1>TIC TAC TOE</h1>
-    </div>
+        <h1>DISCO <br>TAC TOE</h1>
         <h3 class='x'></h3>
         <h3 class='o'></h3>
         <h3 class='ties'></h3>
-
+    </div>
+    
     <div class='container'>
         <div class='buttons'>
             <button id='one'>null</button> <button id='two'>null</button> <button id='three'>null</button>
@@ -24,11 +30,13 @@
             <button id='sev'>null</button> <button id='eight'>null</button> <button id='nine'>null</button>
         </div>
     </div>
-
-
+    
+    
     <div class='render'>
-        <h2 class='game-text'>X's TURN.</h2>
+        <h2 class='round'></h2>
+        <h3 class='game-text'>X's TURN.</h3>
+        <button class='play-again'>Play Again?</button>
+
     </div>
-    <button class='play-again'>Play Again?</button>
 </body>
 </html>
