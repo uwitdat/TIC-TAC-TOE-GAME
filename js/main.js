@@ -1,4 +1,17 @@
 //VARIABLES
+// boardState = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
+
+// randomizer = [];
+
+
+//BOARD STATE MAPPING:
+
+
+
 gameState = 0
 
 gameScore = {
@@ -22,6 +35,7 @@ let scoreTies = document.querySelector('.ties')
 let roundText = document.querySelector('.round')
 roundText.textContent = `Round: ${round}`
 
+
 //DOMS
 playAgain.addEventListener('click', function (e){
     reset()
@@ -29,6 +43,8 @@ playAgain.addEventListener('click', function (e){
     roundText.textContent = `Round: ${round}`
     playAgain.style.display = 'none'
 })
+
+
 
 btnsDiv.addEventListener('click',function (e){
     if(e.target.tagName !== 'BUTTON') return;
@@ -39,21 +55,53 @@ btnsDiv.addEventListener('click',function (e){
         e.target.style.color = 'blue'
         gameState++
         gameText.textContent = 'Os TURN.'
+        // updateBoardState(e.target.innerText)    
+        // computerMoves()
         winner();
         ties();
 
+
         } else {
+
 
         e.target.innerText= o
         e.target.disabled = true
         e.target.style.color = 'red'
         gameState++
         gameText.textContent = 'Xs TURN.'
+        // updateBoardState(e.target.innerText)
         winner();     
         ties();
+
         }
     }
 )
+
+//SET BOARD STATE TO BUTTON INNERTEXT
+// function updateBoardState(btn){
+//     boardState[0][0] = btnsDiv.children[0].innerText
+//     boardState[0][1] = btnsDiv.children[1].innerText
+//     boardState[0][2] = btnsDiv.children[2].innerText
+//     boardState[1][0] = btnsDiv.children[3].innerText
+//     boardState[1][1] = btnsDiv.children[4].innerText
+//     boardState[1][2] = btnsDiv.children[5].innerText
+//     boardState[2][0] = btnsDiv.children[6].innerText
+//     boardState[2][1] = btnsDiv.children[7].innerText
+//     boardState[2][2] = btnsDiv.children[8].innerText  
+    
+//     console.log(boardState)
+// }
+
+
+
+
+// function computerMoves(){
+
+//     }
+
+ 
+       
+
 
 // ALL POSSIBLE INDEX OUTCOMES FOR WINNING CONDITION
 outcomeLines = [
@@ -71,16 +119,16 @@ function winner(){
 for (line of outcomeLines) {
     let [a, b, c] = line;
     if(btnsDiv.children[a].innerText === x && btnsDiv.children[b].innerText === x && btnsDiv.children [c].innerText === x){
-        btnsDiv.children[a].style.color = 'green';
-        btnsDiv.children[b].style.color = 'green';
-        btnsDiv.children[c].style.color = 'green';
+        for(index of [a,b,c]){
+            btnsDiv.children[index].style.color = 'green';
+        }       
         renderGrey();
         xWin();
 
     }if(btnsDiv.children[a].innerText === o && btnsDiv.children[b].innerText === o && btnsDiv.children [c].innerText === o){
-        btnsDiv.children[a].style.color = 'green';
-        btnsDiv.children[b].style.color = 'green';
-        btnsDiv.children[c].style.color = 'green';
+        for(index of [a,b,c]){
+            btnsDiv.children[index].style.color = 'green';
+        } 
         renderGrey();
         oWin();   
         } 
@@ -140,3 +188,5 @@ function oWin(){
     playAgain.style.display = 'block';
 }
 
+
+    
